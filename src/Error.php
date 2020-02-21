@@ -6,13 +6,16 @@
  * Time: 下午12:56
  */
 
-namespace EasySwoole\Validate;
+namespace Xzusoft\Validate;
 
 /**
- * 错误消息
  * Class Error
- * @revise : 2018-11-15 by eValor
- * @package EasySwoole\Validate
+ *
+ * @package Xzusoft\Validate
+ * @author  : jingzhou
+ * @email   : xunzhou@leubao.com
+ * @date    : 2020/2/21 23:52
+ * @desc    : 错误消息
  */
 class Error
 {

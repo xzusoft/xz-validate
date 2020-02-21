@@ -6,7 +6,7 @@
  * Time: 上午12:41
  */
 
-namespace EasySwoole\Validate;
+namespace Xzusoft\Validate;
 
 
 use EasySwoole\Spl\SplArray;
@@ -14,7 +14,7 @@ use EasySwoole\Spl\SplArray;
 /**
  * 数据验证器
  * Class Validate
- * @package EasySwoole\Validate
+ * @package Xzusoft\Validate;
  */
 class Validate
 {

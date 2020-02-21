@@ -6,14 +6,18 @@
  * Time: 上午12:41
  */
 
-namespace EasySwoole\Validate;
-
+namespace Xzusoft\Validate;
 /**
- * 校验规则
- * 请以首字母排序校验方法以便后期维护
+ *
  * Class Rule
- * @package EasySwoole\Validate
+ *
+ * @package Xzusoft\Validate
+ * @author  : jingzhou
+ * @email   : xunzhou@leubao.com
+ * @date    : 2020/2/21 23:53
+ * @desc    : 校验规则 请以首字母排序校验方法以便后期维护
  */
+
 class Rule
 {
     protected $ruleMap = [];

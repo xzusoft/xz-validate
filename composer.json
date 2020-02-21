@@ -1,25 +1,18 @@
 {
     "name": "xzusoft/validate",
+    "description": "验证器",
     "type": "library",
-    "description": "An efficient swoole framework",
-    "keywords": [
-        "swoole",
-        "framework",
-        "async",
-        "easyswoole"
-    ],
-    "homepage": "https://www.xzusoft.com/",
-    "license": "Apache-2.0",
-    "authors": [
-        {
-            "name": "xzusoft",
-            "email": "xunzhou@leubao.com"
-        }
-    ],
     "require": {
         "php": ">=7.1.0",
         "easyswoole/spl": "^1.0"
     },
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "xzsoft",
+            "email": "xunzhou@leubao.com"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Xzusoft\\Validate\\": "src/"
