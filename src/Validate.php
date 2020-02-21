@@ -23,10 +23,64 @@ class Validate
     protected $error;
 
     protected $verifiedData = [];
-
+    /**
+     * 验证场景定义
+     * @var array
+     */
+    protected $scene = [];
+    
+    /**
+     * 是否批量验证
+     * @var bool
+     */
+    protected $batch = false;
+    /**
+     * 当前验证场景
+     * @var string
+     */
+    protected $currentScene;
+    
     function getError(): ?Error
     {
         return $this->error;
+    }
+    
+    /**
+     * 设置验证场景
+     * @access public
+     * @param string $name 场景名
+     * @return $this
+     */
+    public function scene(string $name)
+    {
+        // 设置当前场景
+        $this->currentScene = $name;
+        
+        return $this;
+    }
+    
+    /**
+     * 判断是否存在某个验证场景
+     * @access public
+     * @param string $name 场景名
+     * @return bool
+     */
+    public function hasScene(string $name): bool
+    {
+        return isset($this->scene[$name]) || method_exists($this, 'scene' . $name);
+    }
+    
+    /**
+     * 设置批量验证
+     * @access public
+     * @param bool $batch 是否批量验证
+     * @return $this
+     */
+    public function batch(bool $batch = true)
+    {
+        $this->batch = $batch;
+        
+        return $this;
     }
 
     /**
@@ -47,13 +101,36 @@ class Validate
         }
         return $this->columns[$name]['rule'];
     }
-
+    /**
+     * 追加某个字段的验证规则
+     * @access public
+     * @param string|array $field 字段名
+     * @param mixed        $rule  验证规则
+     * @return $this
+     */
+    public function append($field, $rule = null)
+    {
+        if (is_array($field)) {
+            foreach ($field as $key => $rule) {
+                $this->append($key, $rule);
+            }
+        } else {
+            if (is_string($rule)) {
+                $rule = explode('|', $rule);
+            }
+            
+            $this->append[$field] = $rule;
+        }
+        
+        return $this;
+    }
     /**
      * 验证字段是否合法
      * @param array $data
+     * @param array $rules 规则
      * @return bool
      */
-    function validate(array $data)
+    function validate(array $data, array $rules = []) : bool
     {
         $this->verifiedData = [];
         $spl                = new SplArray($data);

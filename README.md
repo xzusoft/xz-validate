@@ -1,4 +1,4 @@
-# validate
+# validate 修改自easySwoole/validate 使其可使用独立验证器文件
 
 ## 默认错误信息提示
 
