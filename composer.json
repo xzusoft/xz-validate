@@ -1,5 +1,5 @@
 {
-    "name": "easyswoole/validate",
+    "name": "xzusoft/validate",
     "type": "library",
     "description": "An efficient swoole framework",
     "keywords": [
@@ -8,12 +8,12 @@
         "async",
         "easyswoole"
     ],
-    "homepage": "https://www.easyswoole.com/",
+    "homepage": "https://www.xzusoft.com/",
     "license": "Apache-2.0",
     "authors": [
         {
-            "name": "YF",
-            "email": "291323003@qq.com"
+            "name": "xzusoft",
+            "email": "xunzhou@leubao.com"
         }
     ],
     "require": {
@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "EasySwoole\\Validate\\": "src/"
+            "Xzusoft\\Validate\\": "src/"
         }
     },
     "require-dev": {
